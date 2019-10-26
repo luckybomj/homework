@@ -1,0 +1,44 @@
+#bubble sort
+N = 15
+a = [862, 615, 643, 467, 942, 179, 653, 830, 918, 891, 224, 323, 986, 572, 551]
+
+for i in range(N - 1):
+    for j in range(N - i - 1):
+        if a[j] > a[j + 1]:
+            a[j], a[j + 1] = a[j + 1], a[j]
+
+print(a)
+
+#insertion sort
+def insertionSort(array):
+    for index in range(1, len(array)):
+
+        currentValue = array[index]
+        position = index
+
+        while position > 0 and array[position - 1] > currentValue:
+            array[position] = array[position - 1]
+            position = position - 1
+
+        array[position] = currentValue
+
+
+array = [103, 200, 642, 217, 580, 182, 26, 705, 457, 58, 467, 424, 969, 980, 772]
+insertionSort(array)
+print(array)
+
+#selection sort
+def selection_sort(array):
+    for i in range(len(array) - 1):
+        m = i
+        j = i + 1
+        while j < len(array):
+            if array[j] < array[m]:
+                m = j
+            j = j + 1
+        array[i], array[m] = array[m], array[i]
+
+
+array_values = [746, 874, 572, 558, 284, 850, 106, 202, 139, 925, 486, 229, 443, 704, 783]
+selection_sort(array_values)
+print(array_values)
